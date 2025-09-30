@@ -1835,7 +1835,8 @@ nav ul li a:hover {
   }
 
   .Logo{
-    margin-left: 62px !important;
+    margin-left: 49px !important;
+    height: 36px;
   }
 
   .footer-basic .copyright{
