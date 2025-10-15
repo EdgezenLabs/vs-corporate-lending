@@ -1623,6 +1623,10 @@ header .from-blue-600 {
     background-color: rgb(0 146 69);
 } */
 
+.fsize22{
+ font-size:22px !important;
+}
+
 
 .border-blue-600:hover, .py-3:hover {
     --tw-scale-x: 1.05;
@@ -1912,4 +1916,109 @@ nav ul li a:hover {
 
 .cus-footer{
     padding-bottom:0px;
+}
+
+
+.badge{
+    display: none !important;
+}
+
+.cus-popup h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+
+/***Quick Inquiry-Start***/
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: .5rem;
+  color:#000;
+}
+
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/***Quick Inquiry-End***/
+
+
+
+
+
+
+
+/***Remove***/
+#overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+    z-index: 9999999999999;
+}
+
+#popup {
+  max-width: 600px;
+  width: 80%;
+  max-height: 300px;
+  height: 80%;
+  padding: 20px;
+  position: relative;
+      background: linear-gradient(90deg, rgba(1, 16, 120, 1) 0%, rgba(87, 199, 133, 1) 100%, rgba(0, 146, 69, 1) 100%);
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+#close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #000;
 }
