@@ -1911,7 +1911,7 @@ nav ul li a:hover {
 }
 
 .footer-basic .copyright a{
-    color:#fff;
+    color:#25c35f;
 }
 
 .cus-footer{
@@ -2006,7 +2006,7 @@ a {
 #popup {
   max-width: 600px;
   width: 80%;
-  max-height: 300px;
+  max-height: 250px;
   height: 80%;
   padding: 20px;
   position: relative;
