@@ -111,18 +111,16 @@
                         <div id="popup" class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white q-inquiry">
                             <div id="close">X</div>
                             <h2 class="mBot20 cusline">Quick Inquiry</h2>
-                            <form id="form-area" action="../action.php" method="POST">
+                            <form id="form-area" action="../send-mail.php" method="POST">
                                 <div class="container">
                                     <input type="text" placeholder="Your Name" name="name" id="name" required>
-                                    <input type="text" placeholder="Phone Number" name="phonenumber" id="phonenumber"
-                                        required>
-                                    <input type="text" placeholder="Loan Amount Required" name="loanamountrequired"
-                                        id="loanamountrequired" required>
-                                    <textarea name="message" placeholder="Brief message about your requirement"
+                                    <input type="email" placeholder="Your email" name="email" id="name" required>
+                                    
+                                    <textarea id="" name="message" placeholder="Brief message about your requirement"
                                         class="w-full px-4 py-3 rounded-lg border-0 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"></textarea>
                                     <input type="submit"
                                         class="w-full mt-6 bg-white text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                                        value="Submit">
+                                        value="Send Message">
                                     <!-- <button
                                         class="w-full mt-6 bg-white text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Submit
                                         Inquiry</button> -->
@@ -139,7 +137,7 @@
                         <div id="popup1" class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white q-inquiry">
                             <div id="close1">X</div>
                             <h2 class="mBot20 cusline">Free Eligibility Check</h2>
-                            <form id="eligibility " action="../action.php" method="POST">
+                            <form id="eligibility " action="../action1.php" method="POST">
                                 <div class="container">
                                     <label for="multiple_files">Upload Your PAN Card</label>
                                     <input
