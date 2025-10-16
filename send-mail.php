@@ -5,7 +5,8 @@ require "vendor/autoload.php";
 
 if ($_SERVER['REQUEST_METHOD']=="POST") {
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $loanamount = $_POST['loanamount'];
+	$phone = $_POST['phone'];
     $message = $_POST['message'];
 
     $mail = new PHPMailer(true);
@@ -24,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
         $mail -> Subject = "New Contact Form Submission";
         $mail -> Body = "Name: $name\n".
-                        "Email: $email\n".
+                        "Loan Amount: $loanamount\n".
+						"Phone: $phone\n".
                         "Message: $message";
         if($mail -> send()){
             echo "Message sent successfully";
