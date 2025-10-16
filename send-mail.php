@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
     try {
         $mail -> isSMTP();
-        $mail -> Host = "smtp.gmail.com";
+        $mail -> Host = "smtp.zoho.in";
         $mail -> SMTPAuth = true;
         $mail -> Username = "a.jayaram@edgezenlabs.com";
         $mail -> Password = "Ramjay2025$";
