@@ -1992,7 +1992,7 @@ a {
 
 
 /***Remove***/
-#overlay {
+#overlay, #overlay1 {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -2005,22 +2005,47 @@ a {
     z-index: 9999999999999;
 }
 
-#popup {
+#popup, #popup1 {
   max-width: 600px;
   width: 80%;
-  max-height: 250px;
-  height: 80%;
+  height:auto;
   padding: 20px;
   position: relative;
-      background: linear-gradient(90deg, rgba(1, 16, 120, 1) 0%, rgba(87, 199, 133, 1) 100%, rgba(0, 146, 69, 1) 100%);
+    
   margin: 20px auto;
   border-radius: 20px;
 }
 
-#close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  color: #000;
+
+.cusline{
+        font-size: 21px;
+    border-bottom: 1px solid #fff;
+    line-height: 50px;
+}
+
+#close, #close1 {
+    position: absolute;
+    top: 10px;
+    right: 23px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+label{
+    color:#fff !important;
+    line-height: 31px !important;
+}
+
+.mBot20{
+    margin-bottom:20px !important;
+}
+
+.cuspad{
+    margin-bottom:20px !important;
+    padding: 12px;
+}
+
+.m0{
+    margin-bottom:0px !important;
 }
