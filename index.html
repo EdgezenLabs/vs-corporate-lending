@@ -1568,30 +1568,30 @@
                         <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white q-inquiry">
                             <h3 class="text-2xl font-bold mb-6">Quick Inquiry</h3>
 
-                             <form id="feedbackForm">
+                            <form id="feedbackForm">
                                 <div class="form-group">
 
-                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                    <input type="text" id="name1" name="name" placeholder="Enter your name" required>
                                 </div>
 
                                 <div class="form-group">
 
-                                    <input type="text" id="email" name="email" placeholder="Enter your Phone Number" 
+                                    <input type="text" id="email1" name="email" placeholder="Enter your Phone Number" 
                                         required>
                                 </div>
                                 <div class="form-group">
 
-                                    <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                                    <input type="text" id="phone1" name="phone" placeholder="Phone" required>
                                 </div>
 
                                 <div class="form-group">
 
-                                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                    <input type="text" id="subject1" name="subject" placeholder="Subject" required>
                                 </div>
 
                                 <div class="form-group">
 
-                                    <textarea id="message" name="message" placeholder="Write your message..." class="w-full px-4 py-3 rounded-lg border-0 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+                                    <textarea id="message1" name="message" placeholder="Write your message..." class="w-full px-4 py-3 rounded-lg border-0 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
                                         required></textarea>
                                 </div>
 
@@ -1716,13 +1716,6 @@
     <script>
         document.getElementById("contactForm").addEventListener("submit", function (event) {
             event.preventDefault();
-            
-        });
-
-        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-           
-        });
 
             const sendform = {
                 name: document.getElementById("name").value,
@@ -1743,6 +1736,37 @@
                 .then(() => {
                     alert("✅ Your message was sent successfully!");
                     document.getElementById("contactForm").reset();
+                })
+                .catch((error) => {
+                    alert("❌ Failed to send message. Please try again later.");
+                    console.error("Error:", error);
+                });
+        });
+    </script>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const sendform = {
+                name: document.getElementById("name1").value,
+                email: document.getElementById("email1").value,
+                phone: document.getElementById("phone1").value,
+                subject: document.getElementById("subject1").value,
+                message: document.getElementById("message1").value,
+            };
+
+            // 1️⃣ Send email to admin (you)
+            emailjs.send("service_8idkiqd", "template_xtxvcmh", sendform)
+                .then(() => {
+                    console.log("✅ Message sent to admin");
+
+                    // 2️⃣ Send acknowledgment to user
+                    return emailjs.send("service_8idkiqd", "template_t9r0m4u", sendform);
+                })
+                .then(() => {
+                    alert("✅ Your message was sent successfully!");
+                    document.getElementById("feedbackForm").reset();
                 })
                 .catch((error) => {
                     alert("❌ Failed to send message. Please try again later.");
