@@ -1568,7 +1568,7 @@
                         <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white q-inquiry">
                             <h3 class="text-2xl font-bold mb-6">Quick Inquiry</h3>
 
-                             <form id="contactForm">
+                             <form id="feedbackForm">
                                 <div class="form-group">
 
                                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -1716,6 +1716,11 @@
     <script>
         document.getElementById("contactForm").addEventListener("submit", function (event) {
             event.preventDefault();
+
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+        });
 
             const sendform = {
                 name: document.getElementById("name").value,
