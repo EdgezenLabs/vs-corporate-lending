@@ -13,15 +13,15 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
     try {
         $mail -> isSMTP();
-        $mail -> Host = "smtp.zoho.in";
+        $mail -> Host = "smtp.gmail.com";
         $mail -> SMTPAuth = true;
-        $mail -> Username = "a.jayaram@edgezenlabs.com";
-        $mail -> Password = "Ramjay2025$";
+        $mail -> Username = "mail.ramjay@gmail.com";
+        $mail -> Password = "qggr shcg cjek mcag";
         $mail -> SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail -> Port = 587;
 
         $mail -> setFrom("test@test.com", "Jay");
-        $mail -> addAddress("a.jayaram@edgezenlabs.com", "Jay");
+        $mail -> addAddress("mail.ramjay@gmail.com", "Jay");
 
         $mail -> Subject = "New Contact Form Submission";
         $mail -> Body = "Name: $name\n".
