@@ -130,12 +130,12 @@
 
                                 <div class="form-group">
 
-                                    <input type="text" id="email" name="email" placeholder="Enter your Phone Number" 
+                                    <input type="text" id="email" name="email" placeholder="Enter your Email" 
                                         required>
                                 </div>
                                 <div class="form-group">
 
-                                    <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                                    <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required>
                                 </div>
 
                                 <div class="form-group">
@@ -159,33 +159,16 @@
                             class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white q-inquiry">
                             <div id="close1">X</div>
                             <h2 class="mBot20 cusline">Free Eligibility Check</h2>
-                            <form id="eligibility " action="../action1.php" method="POST">
-                                <div class="container">
-                                    <label for="multiple_files">Upload Your PAN Card</label>
-                                    <input
-                                        class="cuspad block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                        id="multiple_files" type="file" multiple>
+                            <form id="upfiles">
+                                <label for="multiple_files">Your GST Number</label>
+                                <input type="text" name="user_name" placeholder="Your Name" class="cuspad block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" required>
 
-                                    <label class= block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        for="multiple_files">Upload Aadhaar Card</label>
-                                    <input
-                                        class="cuspad block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                        id="multiple_files" type="file" multiple>
+                                <!-- File upload input -->
+                                 <label for="multiple_files">Upload your PAN Card & Aadhaar Card</label>
+                                <input type="file" name="my_file" required />
 
-                                    <input class="m0" type="text" placeholder="Your GST Number" name="name" id="gst" required>
-
-                                    <input type="submit"
-                                        class="w-full mt-6 bg-white text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                                        value="Submit">
-                                    <!-- <button
-                                        class="w-full mt-6 bg-white text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Submit
-                                        Inquiry</button> -->
-                                    <p class="text-blue-100 text-sm mt-4 text-center">Our team will contact you within 2
-                                        hours
-                                        during business
-                                        hours</p>
-                                </div>
-                            </form>
+                                <button type="submit" class="w-full mt-6 bg-white text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Send</button>
+                                </form>
                         </div>
                     </div>
 
@@ -1576,12 +1559,12 @@
 
                                 <div class="form-group">
 
-                                    <input type="text" id="email1" name="email" placeholder="Enter your Phone Number" 
+                                    <input type="text" id="email1" name="email" placeholder="Enter your Email" 
                                         required>
                                 </div>
                                 <div class="form-group">
 
-                                    <input type="text" id="phone1" name="phone" placeholder="Phone" required>
+                                    <input type="text" id="phone1" name="phone" placeholder="Enter your Phone" required>
                                 </div>
 
                                 <div class="form-group">
@@ -1773,6 +1756,26 @@
                     console.error("Error:", error);
                 });
         });
+    </script>
+
+    <script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
+    <script>
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("5LYwrROmSIdkVCIqZ"); // Replace with your EmailJS public key
+    })();
+
+    // Form submit handler
+    document.getElementById("upfiles").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm("service_8idkiqd", "template_xtxvcmh", this)
+        .then(function() {
+            alert("Message sent successfully!");
+        }, function(error) {
+            alert("Failed to send message: " + JSON.stringify(error));
+        });
+    });
     </script>
 
 </body>
